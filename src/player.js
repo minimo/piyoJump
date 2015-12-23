@@ -8,6 +8,10 @@
 phina.define('Player', {
   superClass: 'phina.display.Sprite',
 
+  vy: 0,
+  jumpCount: 0,
+  jumpMax: 2,
+
   init: function() {
     this.superInit('hiyoco', 32, 32);
     this.setScale(2).setOrigin(0.5, 1.0);
@@ -18,7 +22,7 @@ phina.define('Player', {
 
     this.vy = 0;
     this.jumpCount = 0;
-    this.jumpMax = 2;
+    this.jumpMax = 3;
   },
 
   update: function(app) {
@@ -36,16 +40,17 @@ phina.define('Player', {
   },
 
   jump: function() {
-    if (this.inSquat || this.jumpCount == this.jumpMax) return;
-    this.vy = -50;
-    this.jumpCount++;
-    this.inJump = true;
+    if (!this.inSquat && this.jumpCount < this.jumpMax) {
+      this.vy = -50;
+      this.jumpCount++;
+      this.inJump = true;
+    }
   },
 
   squat: function() {
     if (this.inSquat || this.inJump) return;
     this.tweener.clear()
-      .to({scaleY: 1}, 300, 'easeInSine')
+      .to({scaleY: 1}, 300, 'easeOutBounce')
       .wait(300)
       .to({scaleY: 2}, 500, 'easeOutBounce')
       .call(function(){this.inSquat = false;}.bind(this));
