@@ -13,7 +13,11 @@ phina.main(function() {
   var app = phina.game.GameApp({
     assets: {
       image: {
-        'hiyoko': 'assets/images/hiyoco_nomal_full.png',
+        'background': 'assets/images/bg.png',
+        'hiyoco':     'assets/images/hiyoco_nomal_full.png',
+      },
+      spritesheet: {
+        'hiyoco': 'assets/spritesheet/hiyoco.ss',
       },
     },
     startLabel: 'main',
