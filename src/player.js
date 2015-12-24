@@ -27,32 +27,33 @@ phina.define('Player', {
 
   update: function(app) {
     this.y += this.vy;
-    if (this.inJump) {
+    if (this.isJump) {
         this.vy += 9.8/2;
         this.jumpCount++;
     }
     if (this.y > SC_H*0.8) {
         this.jumpCount = 0;
-        this.inJump = false;
+        this.isJump = false;
         this.vy = 0;
         this.y = SC_H*0.8;
     }
   },
 
   jump: function() {
-    if (!this.inSquat && this.jumpCount < this.jumpMax) {
-      this.vy = -50;
-      this.jumpCount++;
-      this.inJump = true;
-    }
+    if (this.isSquat || this.jumpCount >= this.jumpMax) return;
+
+    this.vy = -40;
+    this.jumpCount++;
+    this.isJump = true;
   },
 
   squat: function() {
-    if (this.inSquat || this.inJump) return;
+    if (this.isSquat || this.isJump) return;
+
     this.tweener.clear()
-      .to({scaleY: 1}, 300, 'easeOutBounce')
+      .to({scaleY: 1.5}, 300, 'easeOutBounce')
       .wait(300)
-      .to({scaleY: 2}, 500, 'easeOutBounce')
-      .call(function(){this.inSquat = false;}.bind(this));
+      .to({scaleY: 3}, 500, 'easeOutBounce')
+      .call(function(){this.isSquat = false;}.bind(this));
   },
 });
