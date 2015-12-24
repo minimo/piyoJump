@@ -15,6 +15,7 @@ phina.main(function() {
       image: {
         'background': 'assets/images/bg.png',
         'hiyoco':     'assets/images/hiyoco_nomal_full.png',
+        'waru':       'assets/images/hiyoco_waru_full.png',
       },
       spritesheet: {
         'hiyoco': 'assets/spritesheet/hiyoco.ss',
