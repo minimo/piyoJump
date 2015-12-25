@@ -16,6 +16,9 @@ phina.main(function() {
         'background': 'assets/images/bg.png',
         'hiyoco':     'assets/images/hiyoco_nomal_full.png',
         'waru':       'assets/images/hiyoco_waru_full.png',
+        'mecha':      'assets/images/hiyoco_mecha_full.png',
+        'niwatori':   'assets/images/hiyoco_niwatori_full.png',
+        'lady':       'assets/images/hiyoco_lady_full.png',
       },
       spritesheet: {
         'hiyoco': 'assets/spritesheet/hiyoco.ss',
