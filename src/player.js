@@ -31,11 +31,11 @@ phina.define('Player', {
         this.vy += 9.8/2;
         this.jumpCount++;
     }
-    if (this.y > SC_H*0.8) {
+    if (this.y > SC_H*0.7) {
         this.jumpCount = 0;
         this.isJump = false;
         this.vy = 0;
-        this.y = SC_H*0.8;
+        this.y = SC_H*0.7;
         this.ss.gotoAndPlay('walk');
     }
   },
@@ -53,9 +53,9 @@ phina.define('Player', {
     if (this.isSquat || this.isJump) return;
 
     this.tweener.clear()
-      .to({scaleY: 1.5}, 300, 'easeOutBounce')
+      .to({scaleY: 1}, 300, 'easeOutBounce')
       .wait(300)
-      .to({scaleY: 3}, 500, 'easeOutBounce')
+      .to({scaleY: 2}, 500, 'easeOutBounce')
       .call(function(){this.isSquat = false;}.bind(this));
   },
 });

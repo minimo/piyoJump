@@ -13,7 +13,7 @@ phina.define('MainScene', {
 
     this.player = Player()
         .addChildTo(this)
-        .setPosition(SC_W*0.5, SC_H*0.8);
+        .setPosition(SC_W*0.5, SC_H*0.7);
 
     var group = phina.display.CanvasElement().addChildTo(this);
     group.origin.set(0, 0);
