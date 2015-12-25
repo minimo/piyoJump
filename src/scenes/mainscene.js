@@ -11,9 +11,19 @@ phina.define('MainScene', {
   init: function() {
     this.superInit();
 
+    var that = this;
     this.player = Player()
-        .addChildTo(this)
-        .setPosition(SC_W*0.5, SC_H*0.7);
+      .addChildTo(this)
+      .setPosition(SC_W*0.5, SC_H*0.7);
+
+/*
+    var label = phina.display.Label('count')
+      .addChildTo(this)
+      .setPosition(SC_W*0.5,SC_H*0.5);
+    label.update = function() {
+      this.text = 'count = '+that.player.jumpCount;
+    }
+*/
 
     var group = phina.display.CanvasElement().addChildTo(this);
     group.origin.set(0, 0);
@@ -41,4 +51,8 @@ phina.define('MainScene', {
   },
   update: function(app) {
   },
+
+  enterEnemy: function() {
+  },
+
 });
