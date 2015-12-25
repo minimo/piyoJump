@@ -22,14 +22,13 @@ phina.define('Player', {
 
     this.vy = 0;
     this.jumpCount = 0;
-    this.jumpMax = 3;
+    this.jumpMax = 2;
   },
 
   update: function(app) {
     this.y += this.vy;
     if (this.isJump) {
         this.vy += 9.8/2;
-        this.jumpCount++;
     }
     if (this.y > SC_H*0.7) {
         this.jumpCount = 0;
@@ -41,7 +40,7 @@ phina.define('Player', {
   },
 
   jump: function() {
-    if (this.isSquat || this.jumpCount >= this.jumpMax) return;
+    if (this.isSquat || this.jumpCount == this.jumpMax) return;
 
     this.vy = -40;
     this.jumpCount++;
