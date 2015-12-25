@@ -11,6 +11,11 @@
             "next": "stop",
             "frequency": 1
         },
+        "walk": {
+            "frames": [12,13,14,13],
+            "next": "walk",
+            "frequency": 5
+        },
         "fly": {
             "frames": [1,2,3],
             "next": "fly",
@@ -19,26 +24,6 @@
         "down": {
             "frames":[4,5],
             "frequency": 23
-        },
-        "walk": {
-            "frames": [15,16,17,16],
-            "next": "wakl",
-            "frequency": 5
-        },
-        "moveL": {
-            "frames": [12,13,14,13],
-            "next": "moveL",
-            "frequency": 5
-        },
-        "moveD": {
-            "frames": [6,7,8,7],
-            "next": "moveD",
-            "frequency": 5
-        },
-        "moveU": {
-            "frames": [9,10,11,10],
-            "next": "moveU",
-            "frequency": 5
         }
     }
 }
