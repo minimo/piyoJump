@@ -14,11 +14,11 @@ phina.define('Player', {
 
   init: function() {
     this.superInit('hiyoco', 32, 32);
-    this.setScale(2).setOrigin(0.5, 1.0);
+    this.setScale(-2, 2).setOrigin(0.5, 1.0);
 
     this.ss = phina.accessory.FrameAnimation('hiyoco')
         .attachTo(this)
-        .gotoAndPlay('moveR');
+        .gotoAndPlay('walk');
 
     this.vy = 0;
     this.jumpCount = 0;
@@ -36,6 +36,7 @@ phina.define('Player', {
         this.isJump = false;
         this.vy = 0;
         this.y = SC_H*0.8;
+        this.ss.gotoAndPlay('walk');
     }
   },
 
@@ -45,6 +46,7 @@ phina.define('Player', {
     this.vy = -40;
     this.jumpCount++;
     this.isJump = true;
+    this.ss.gotoAndPlay('fly');
   },
 
   squat: function() {

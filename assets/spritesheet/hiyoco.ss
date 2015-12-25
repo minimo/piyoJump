@@ -11,23 +11,23 @@
             "next": "stop",
             "frequency": 1
         },
-        "move": {
+        "fly": {
             "frames": [1,2,3],
-            "next": "move",
+            "next": "fly",
             "frequency": 5
         },
         "down": {
             "frames":[4,5],
             "frequency": 23
         },
+        "walk": {
+            "frames": [15,16,17,16],
+            "next": "wakl",
+            "frequency": 5
+        },
         "moveL": {
             "frames": [12,13,14,13],
             "next": "moveL",
-            "frequency": 5
-        },
-        "moveR": {
-            "frames": [15,16,17,16],
-            "next": "moveR",
             "frequency": 5
         },
         "moveD": {
