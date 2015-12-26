@@ -48,11 +48,19 @@ phina.define('MainScene', {
         that.player.squat();
       }
     };
+    this.time = 0;
   },
   update: function(app) {
+    if (this.time % 30) {
+      this.enterEnemy();
+    }
+    this.time++;
   },
 
   enterEnemy: function() {
+    var en = Enemy()
+      .addChildTo(this)
+      .setPosition(SC_W, Math.randind(SC_H*0.5, SC_H*0.7));
   },
 
 });
