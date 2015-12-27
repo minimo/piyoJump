@@ -51,7 +51,7 @@ phina.define('MainScene', {
     this.time = 0;
   },
   update: function(app) {
-    if (this.time % 30) {
+    if (this.time % 30 == 0) {
       this.enterEnemy();
     }
     this.time++;
@@ -60,7 +60,7 @@ phina.define('MainScene', {
   enterEnemy: function() {
     var en = Enemy()
       .addChildTo(this)
-      .setPosition(SC_W, Math.randind(SC_H*0.5, SC_H*0.7));
+      .setPosition(SC_W, Math.randint(SC_H*0.5, SC_H*0.7));
   },
 
 });
