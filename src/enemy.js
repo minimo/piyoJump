@@ -12,6 +12,7 @@ phina.define('Enemy', {
   speed: 2,
 
   init: function(assetName) {
+    assetName = assetName || 'waru';
     this.superInit(assetName, 32, 32);
     this.setScale(2).setOrigin(0.5, 1.0);
 
